@@ -1,6 +1,6 @@
 name:          hyphenation
 category:      Text
-version:       0.6
+version:       0.6.1
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -49,10 +49,9 @@ Flag Embed
 library
   build-depends:
     base                 >= 4       && < 5,
-    bytestring           >= 0.9.4   && < 0.11,
-    containers           >= 0.3.0.0 && < 0.6,
-    unordered-containers >= 0.2.1   && < 0.3,
-    zlib                 >= 0.5     && < 0.7
+    bytestring,
+    containers,
+    unordered-containers
 
   if flag(embed)
     build-depends: file-embed >= 0.0.7 && < 0.1
@@ -78,9 +77,9 @@ test-suite doctests
   build-depends:
     base,
     containers,
-    directory >= 1.0 && < 1.3,
-    doctest   >= 0.8 && < 0.10,
-    filepath  >= 1.3 && < 1.5,
+    directory,
+    doctest,
+    filepath,
     hyphenation,
     unordered-containers
   ghc-options: -Wall -threaded
